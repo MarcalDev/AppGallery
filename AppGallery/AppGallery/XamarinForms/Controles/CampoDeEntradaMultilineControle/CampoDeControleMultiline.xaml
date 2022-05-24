@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGallery.XamarinForms.Controles.CampoDeEntradaMultilineControle.CampoDeControleMultiline">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="Label1" Text="Text, TextColor" />
+                <Entry x:Name="Caixa1" Text="Texto Simples" TextColor="Blue"/>
+
+                <Label Text="Placeholder, PlaceholderCOlor" />
+                <Editor Placeholder="Digite o seu nome" PlaceholderColor="LightBlue"/>
+
+                <Label Text="MaxLength, BackgroundColor" />
+                <Editor MaxLength="10" BackgroundColor="LightBlue"/>
+
+                <Label Text="IsReadOnly, IsPassword" />
+                <Editor Text="123456" IsReadOnly="True"/>
+                
+                <Label Text="CharacterSpacing"/>
+                <Editor CharacterSpacing="5"/>
+
+                <Label Text="FontFamily, FontSize, FontAttributes"/>
+                <Editor FontFamily="sansserif-thin" FontSize="32" FontAttributes="Italic"/>
+
+                <Label Text="IsSpellCheckEnabled, IsTextPredictionEnabled" />
+                <Editor IsSpellCheckEnabled="true" IsTextPredictionEnabled="true"/>
+
+                <Label Text="Keyboard, KeyboardFlags,"/>
+                <Editor Keyboard="Email">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,Spellcheck,CaptalizeCharacter</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+
+                </Editor>
+
+                <Label Text="Eventos: Focused, Unfocused, TextChange d, Completed"/>
+                <Editor HeightRequest="200" Focused="Editor_Focused" Unfocused="Editor_Unfocused" TextChanged="Editor_TextChanged" Completed="Editor_Completed" />
+                <Label x:Name="lblFocus" Text="-"/>
+                <Label x:Name="lblUnfocus" Text="-"/>
+                <Label x:Name="lblTextchange" Text="-"/>
+                <Label x:Name="lblCompleted" Text="-"/> 
+
+                <!--<Button Text="Clique" Clicked="Entra"/>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="AppGallery.XamarinForms.Estilos.TemaClaroEscuro.ClaroEscuro">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <AppThemeBinding x:Key="CorFundo" Light="White" Dark="Black"/>
+            <AppThemeBinding x:Key="CorTexto" Light="Black" Dark="White"/>
+            <AppThemeBinding x:Key="FrameBorda" Light="Black" Dark="DarkGray"/>
+            <AppThemeBinding x:Key="FrameCorFundo" Light="White" Dark="#333333"/>
+
+            <OnAppTheme x:Key="LblTituloEN" x:TypeArguments="x:String" Light="Light" Dark="Dark"/>
+            <OnAppTheme x:Key="LblTituloPT" x:TypeArguments="x:String" Light="(Claro)" Dark="(Escuro)"/>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{DynamicResource CorFundo}">
+            <Label Text="Light/Dark Theme" TextColor="{DynamicResource CorTexto}"/>
+
+            <Label Text="{DynamicResource LblTituloEN}" TextColor="{DynamicResource CorTexto}" 
+                   FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            
+            <Label Text="{DynamicResource LblTituloPT}" TextColor="{DynamicResource CorTexto}" 
+                   HorizontalOptions="CenterAndExpand" FontSize="10"/>
+
+            <Frame Margin="0, 80, 0, 0" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center"
+                   BorderColor="{DynamicResource FrameBorda}" 
+                   BackgroundColor="{DynamicResource FrameBorda}">
+                
+                <Label Text="A" FontAttributes="{OnAppTheme Light=Bold, Dark=Italic}" FontSize="100" 
+                       HorizontalTextAlignment="Center" TextColor="{DynamicResource CorTexto}"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>-->
+</ContentPage>

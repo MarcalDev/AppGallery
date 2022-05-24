@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ext="clr-namespace:AppGallery.XamarinForms.Controles.ImagemControle"
+             x:Class="AppGallery.XamarinForms.Controles.ImagemControle.Imagem">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Source:Resource"/>
+                    <!-- Recurso -->
+                <Image x:Name="Imagem01" 
+                       Source="{ext:ImageResource AppGallery.XamarinForms.Controles.ImagemControle.background.png}" Aspect="AspectFill"
+                       />
+
+                <Label Text="Source:File, Aspect"/>
+                    <!-- Arquivo -> Imagens dentro dos projetos específicos do SO -->
+                <Image Source="xamarin.png" Aspect="Fill" />
+                <Image Source="xamarin.png" Aspect="AspectFit" BackgroundColor="Yellow" HorizontalOptions="Center" WidthRequest="150" HeightRequest="50"/>
+
+                <Label Text="Source:Url, Aspect"/>
+                <!-- URL - -->
+                
+                <Image
+                    Aspect="AspectFill"
+                    HorizontalOptions="Center" WidthRequest="50" HeightRequest="100"
+                    Source="https://files.paredro.com/uploads/2018/08/Amazon-Logo.jpg"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+    

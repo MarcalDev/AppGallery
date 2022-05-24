@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGallery.XamarinForms.Estilos.VSM.VSM">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        
+                        <!-- State Group 1-->
+                        <VisualStateGroup x:Name="CommonStates">
+                            
+                            <VisualState x:Name="Normal">                                
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="AliceBlue"/>
+                                </VisualState.Setters>                                
+                            </VisualState>
+                            
+                            <VisualState x:Name="Disabled">                                
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightGray"/>
+                                </VisualState.Setters>                                
+                            </VisualState>
+                            
+                        </VisualStateGroup>
+                        
+                        <!-- State Group 2-->
+                        <VisualStateGroup x:Name="ValidationStates">
+                            
+                            <VisualState x:Name="Valid">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#27AE60"/>
+                                    </VisualState.Setters>                                
+                                </VisualState>
+                            
+                            <VisualState x:Name="Invalid">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#E74C3C"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            
+                        </VisualStateGroup>
+                    </VisualStateGroupList>                    
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="VisualStateManager"/>
+            
+            <Entry x:Name="TxtHex" IsEnabled="True" Placeholder="Digite um código Hexadecimal" TextChanged="Entry_TextChanged"/>
+
+            <Button Text="Ativar/Desativar" Clicked="BtnAtivarDesativar" BackgroundColor="#E74C3C" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

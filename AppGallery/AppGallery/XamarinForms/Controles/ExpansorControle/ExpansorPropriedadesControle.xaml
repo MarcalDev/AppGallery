@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Padding="10"
+             x:Class="AppGallery.XamarinForms.Controles.ExpansorControle.ExpansorPropriedadesControle">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Label Text="Expander dentro de outro expander" />
+            <!-- Expander principal-->
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <Label Text="Expander principal"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           TextColor="Red"/>
+                </xct:Expander.Header>
+                
+                <!-- Expander filho 01-->
+                <xct:Expander Padding="10">
+                    <xct:Expander.Header>
+                        <Label Text="Expander filho 01"
+                               FontSize="Medium"
+                               TextColor="Blue"/>
+                    </xct:Expander.Header>
+                    
+                    <xct:Expander.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>                                    
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="Conteúdo 01" FontAttributes="Bold"/>
+                                <Label Grid.Column="1"
+                                       Text="Conteúdo 02"
+                                       FontAttributes="Italic"/>
+                            </Grid>
+                        </DataTemplate>
+                    </xct:Expander.ContentTemplate>
+                </xct:Expander>
+
+
+            </xct:Expander>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

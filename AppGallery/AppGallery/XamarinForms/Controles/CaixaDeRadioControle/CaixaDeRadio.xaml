@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Padding="10"
+             x:Class="AppGallery.XamarinForms.Controles.CaixaDeRadioControle.CaixaDeRadio">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="IsChecked, Text, TextColor"/>
+
+            <RadioButton IsChecked="True" Content="C#" TextColor="Blue" FontFamily="sans-serif-thin"/>
+            <RadioButton IsChecked="false" Content="PHP" TextColor="Red" FontFamily="sans-serif-light"/>
+            <RadioButton IsChecked="False" Content="Java" TextColor="Green"/>
+
+            <Label Text="GroupName"/>
+            <RadioButton Content="JavaScript" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="SASS" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="HTML" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
+            <Label x:Name="LblInformativo"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

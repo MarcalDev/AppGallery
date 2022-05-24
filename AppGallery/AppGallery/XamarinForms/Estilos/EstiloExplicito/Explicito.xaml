@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGallery.XamarinForms.Estilos.EstiloExplicito.Explicito">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EstiloParaBotao" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout.Resources>
+                <Style x:Key="EstiloParaBotao" TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="Accent"/>
+                </Style>
+            </StackLayout.Resources>
+            
+            <Label Text="ExplicityStyle"/>
+            <Label Text="Vantagem: Padronização"/>
+
+            <Button Text="Botão 01" Style="{StaticResource EstiloParaBotao}"/>
+            <Button Text="Botão 021" Style="{StaticResource EstiloParaBotao}"/>
+            <Button Text="Botão 03" Style="{StaticResource EstiloParaBotao}"/>
+
+            <StackLayout Orientation="Horizontal">
+                
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="EstiloParaBotao" TargetType="Button">
+                            <Setter Property="BackgroundColor" Value="Green"/>
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                
+                <Button Text="Botão 04" Style="{StaticResource EstiloParaBotao}"/>
+                <Button Text="Botão 05" Style="{StaticResource EstiloParaBotao}"/>
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    

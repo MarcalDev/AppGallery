@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppGallery.XamarinForms.Controles.MediaControle.Media">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="MediaElement" />
+            <Label Text="Propriedades: "/>
+            <Label Text="Métodos: "/>
+            <Label Text="Eventos: "/>
+
+            <Label Text="MP3" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            
+            <Label Text="MP4"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppGallery.AppBase"
+             xmlns:viewmodel="clr-namespace:AppGallery.AppBase.ViewModels"
+                  x:Class="AppGallery.AppBase.Menu">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Style="{DynamicResource PageMenu}">
+
+            <ContentPage.BindingContext>
+                <viewmodel:MenuViewModel/>
+            </ContentPage.BindingContext>
+            
+            <CollectionView ItemsSource="{Binding MenuItens}" ItemTemplate="{StaticResource PageListDataTemplate}" IsGrouped="True">
+
+                <CollectionView.Header>
+                    <StackLayout>
+                        <StackLayout Padding="30" BackgroundColor="{AppThemeBinding Light = {StaticResource LogoBackgroundColor1}, Dark ={StaticResource LogoBackgroundColor2}}">
+                            <Image Style="{DynamicResource Logomarca}"/>
+                            <Label Text="Xamarin Forms &#x0a;Gallery" StyleClass="FontSmall" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 5, 5">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirPaginaFixa" CommandParameter="Inicio"/>
+                            </StackLayout.GestureRecognizers>
+                            <Image Style="{DynamicResource IconHome}"/>
+                            <Label Text="Início" Margin="7, 0"/>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal" Padding="10, 10, 5, 5">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirPaginaFixa" CommandParameter="Creditos"/>
+                            </StackLayout.GestureRecognizers>
+                            <Image Style="{DynamicResource IconHeart}"/>
+                            <Label Text="Créditos" Margin="7, 0"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                </CollectionView.Header>
+                
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Nome}" Style="{DynamicResource GroupTitle}"/>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+
+
+            </CollectionView>
+
+            
+            
+            <!--<ScrollView>
+                <StackLayout>
+                    <Label Text="Páginas"/>
+
+
+                    <Button Text="ContentPage"  Clicked="AbrirContentPage"/>
+                    <Button Text="NavigationPage" Clicked="AbrirNavigationPage"/>
+                    <Button Text="CarouselPage" Clicked="AbrirCarouselPage"/>
+                    <Button Text="TabbedPage" Clicked="AbrirTabbedPage"/>
+                    <Button Text="MasterDetailPage" Clicked="AbrirMasterDetailPage"/>
+                    <Button Text="Modal" Clicked="AbrirPaginaModal"/>
+
+                    <Label Text="Leiautes"/>
+                    <Button Text="StackLayout" Clicked="AbirStackLayout"/>
+                    <Button Text="Grid" Clicked="AbrirGrid"/>
+                    <Button Text="AbsoluteLayout" Clicked="AbrirAbsoluteLayout"/>
+                    <Button Text="RelativeLayout" Clicked="AbirRelativeLayout"/>
+                    <Button Text="FlexLayout" Clicked="AbrirFlexLayout"/>
+                    <Button Text="ScrollView" Clicked="Button_Clicked"/>
+                    <Button Text="ContentView" Clicked="AbrirContentView"/>
+                    <Button Text="Frame" Clicked="AbrirFrame"/>
+
+                    <Label Text="Controles"/>
+                    <Button Text="BoxView" Clicked="AbrirBoxView"/>
+                    <Button Text="Label" Clicked="AbrirLabel"/>
+                    <Button Text="Button" Clicked="AbrirButton"/>
+                    <Button Text="ImageButton" Clicked="AbrirImageButton"/>
+                    <Button Text="Image" Clicked="AbrirImage"/>
+                    <Button Text="Entry" Clicked="AbrirEntry"/>
+                    <Button Text="Editor" Clicked="AbrirEditor"/>
+                    <Button Text="CheckBox" Clicked="AbrirCheckBox"/>
+                    <Button Text="RadioButton" Clicked="AbrirRadioButton"/>
+                    <Button Text="Switch" Clicked="AbrirSwitch"/>
+                    <Button Text="Stepper" Clicked="AbrirStepper"/>
+                    <Button Text="Slider" Clicked="AbrirSlider"/>
+                    <Button Text="Picker" Clicked="AbrirPicked"/>
+                    <Button Text="DatePicker" Clicked="AbrirDatePicker"/>
+                    <Button Text="TimePicker" Clicked="AbrirTimePicker"/>
+                    <Button Text="ActivityIndicator" Clicked="AbrirActivityIndicator"/>
+                    <Button Text="ProgressBar" Clicked="AbrirProgressBar"/>
+                    <Button Text="SearchBar" Clicked="AbrirSearchBar"/>
+                    <Button Text="RefreshView" Clicked="AbrirRefreshView"/>
+                    <Button Text="SwipeView" Clicked="AbrirSwipeView"/>
+                    <Button Text="WebView" Clicked="AbrirWebView"/>
+                    <Button Text="MediaElement" Clicked="AbrirMediaElement"/>
+                    <Button Text="Expander" Clicked="AbrirExpander"/>
+                    <Button Text="ExpanderPropertys" Clicked="AbrirExpanderPropertys"/>
+                    
+
+                    <Label Text="Listas"/>
+                    <Button Text="TableView" Clicked="AbirTableView"/>
+                    <Button Text="ListView" Clicked="AbrirListView"/>
+                    <Button Text="CollectionView" Clicked="AbrirCollectionView"/>
+                    <Button Text="CarouselView" Clicked="AbrirCarouselView"/>
+                    <Button Text="IndicatorView" Clicked="AbrirIndicatorView"/>
+                    <Button Text="ObservableCollection" Clicked="AbrirObservableCollection"/>
+                    <Button Text="INotifyPropertyChanged" Clicked="AbrirINotifyPropertyChanged"/>
+                    <Button Text="DataTemplateSelector" Clicked="AbrirDataTemplateSelector"/>
+
+                    <Label Text="Estilos"/>
+                    <Button Text="ExplicityStyle" Clicked="AbrirExplicityStyle"/>
+                    <Button Text="ImplicitStyle" Clicked="AbrirImplicitStyle"/>
+                    <Button Text="GlobalStyle" Clicked="AbrirGlobalStyle"/>
+                    <Button Text="InheritSyle" Clicked="AbrirInheritSyle"/>
+                    <Button Text="DynamicStyle" Clicked="AbrirDynamicStyle"/>
+                    <Button Text="StyleClass" Clicked="AbrirStyleClass"/>
+                    <Button Text="VisualStateManager" Clicked="AbrirVisualStateManager"/>
+                    <Button Text="MaterialDesign" Clicked="AbrirVisualMaterialDesign"/>
+                    <Button Text="Font" Clicked="AbrirFont"/>
+                    <Button Text="ChangeTheme" Clicked="AbrirChangeTheme"/>
+                    <Button Text="LightDarkTheme" Clicked="AbrirLightDarkTheme"/>
+
+                    <Label Text="Animações"/>
+                    <Button Text="Simples" Clicked="AbrirSimples"/>
+
+                    <Label Text="Gestos"/>
+                    <Button Text="GestosSimples" Clicked="AbrirGestosSimples"/>
+                    
+                    <Label Text="Classes úteis"/>
+                    <Button Text="Display" Clicked="AbrirDisplay"/>
+                    <Button Text="Converter" Clicked="AbrirConverter"/>
+                    <Button Text="MessageCenter" Clicked="AbrirMessageCenter"/>
+                    <Button Text="OnPlatform/OnIdiom" Clicked="AbrirOnPlatformOnIdiom"/>
+                    
+                </StackLayout>
+            </ScrollView>-->
+        </ContentPage>        
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Inicio/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
+    
