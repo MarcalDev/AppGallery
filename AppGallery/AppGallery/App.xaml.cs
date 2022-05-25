@@ -1,4 +1,5 @@
 ﻿using AppGallery.AppBase.Modals;
+using AppGallery.Resources.Controls;
 using AppGallery.Resources.Effects;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,7 @@ namespace AppGallery
 
 
 
+            //MainPage = new NavigationPage (new TelaTempo());
             MainPage = new AppBase.Menu();
 
             LogicUpdateStatusBarColorByTheme();
@@ -218,32 +220,27 @@ namespace AppGallery
             }
         }
 
+        
+
         private void AbrirPagina(object sender, EventArgs e)
         {
-            //Pegar o parâmetro (Página)
             TappedEventArgs eventArgs = (TappedEventArgs)e;
             Pagina parametro = (Pagina)eventArgs.Parameter;
 
-
-            //Verificar se tem ou não navegação
             Page pagina = null;
             if (parametro.TemNavegacao)
             {
-
                 pagina = new NavigationPage(
                     (Page)Activator.CreateInstance(parametro.ArquivoPagina)
-                    );
+                );
             }
             else
             {
                 pagina = (Page)Activator.CreateInstance(parametro.ArquivoPagina);
             }
 
-            //Abrir a tela e fechar o menu
             ((MasterDetailPage)App.Current.MainPage).Detail = pagina;
             ((MasterDetailPage)App.Current.MainPage).IsPresented = false;
         }
-
-
     }
 }

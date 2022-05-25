@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="ImageButton"
              x:Class="AppGallery.XamarinForms.Controles.BotaoImagemControle.BotaoImagem">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Source, BorderWidth, BorderColor"/>
-            <ImageButton
+            <controls:SubtitleComponentView Properties="Source, BorderWidth, BorderColor">
+                <controls:SubtitleComponentView.Component>
+                    
+                    <ImageButton
                 HorizontalOptions="Center"
                 Padding="5"
                 Source="send.png"
@@ -13,10 +17,13 @@
                 BorderWidth="2"
                 BorderColor="Black"
                 />
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
 
-            <Label Text="Aspect"/>
-            
-            <ImageButton
+            <controls:SubtitleComponentView Properties="Aspectr">
+                <controls:SubtitleComponentView.Component>
+
+                    <ImageButton
                 HorizontalOptions="Center"
                 WidthRequest="200"
                 HeightRequest="140"
@@ -28,25 +35,38 @@
                 BorderColor="Black"
                  
                 />
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
 
-            <Label Text="Eventos: Pressed, Released, Clicked"/>
-            <ImageButton
-                HorizontalOptions="Center"
-                Source="send.png"
-                BackgroundColor="White"
-                BorderWidth="2"
-                BorderColor="Black"
+
+            <controls:SubtitleComponentView Events="Pressed, Released, Clicked">
+                <controls:SubtitleComponentView.Component>
+                    <StackLayout>
+                        <ImageButton
+                            HorizontalOptions="Center"
+                            Source="send.png"
+                            BackgroundColor="White"
+                            BorderWidth="2"
+                            BorderColor="Black"
                 
                 
-                Pressed="Pressionado"
-                Released="Liberado"
-                Clicked="Clicado"
+                            Pressed="Pressionado"
+                            Released="Liberado"
+                            Clicked="Clicado"
                
-                />
+                        />  
+                        <Label Text="-" x:Name="LblPressionado" />
+                        <Label Text="-" x:Name="LblLiberado"/>
+                        <Label Text="-" x:Name="LblClicado"/>
+                    </StackLayout>
+                    
+                </controls:SubtitleComponentView.Component>
+            </controls:SubtitleComponentView>
 
-            <Label Text="-" x:Name="LblPressionado" />
-            <Label Text="-" x:Name="LblLiberado"/>
-            <Label Text="-" x:Name="LblClicado"/>
+            
+            
+
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

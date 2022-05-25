@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:AppGallery.Resources.Controls"
+             x:Class="AppGallery.Resources.Controls.TelaTempo">
+    <ContentPage.Content>
+        <StackLayout>
+            <control:TitleComponentView Name="ListView" Properties="ItemsSource, ItemTemplate" Events="ItemTapped" Methods="PLay, Stop" Observation="Habilitar Experimental"/>
+            <control:SubtitleComponentView Properties="Items, Title, TitleColor">
+                <control:SubtitleComponentView.Component>
+                    <Picker Title="Picker"></Picker>
+                </control:SubtitleComponentView.Component>
+            </control:SubtitleComponentView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

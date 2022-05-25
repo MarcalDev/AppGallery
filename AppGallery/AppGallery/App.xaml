@@ -6,9 +6,9 @@
         <ResourceDictionary>
             <DataTemplate x:Key="PageListDataTemplate">
                 <StackLayout Padding="25,5,10,5">
-                    <!--<StackLayout.GestureRecognizers>
+                    <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="AbrirPagina" CommandParameter="{Binding .}" />
-                    </StackLayout.GestureRecognizers>-->
+                    </StackLayout.GestureRecognizers>
                     <Label Text="{Binding Nome}" Style="{DynamicResource PageNameTitle}"/>
                     <Label Text="{Binding Descricao}" Style="{DynamicResource PageDescriptionTitle}"/>
                 </StackLayout>

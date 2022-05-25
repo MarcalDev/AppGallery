@@ -17,11 +17,11 @@ namespace AppGallery.XamarinForms.Controles.CampoDeEntradaSimplesControle
             InitializeComponent();
         }
         
-        private void Entra(object sender, EventArgs e)
-        {
-            Label1.Text = Caixa1.Text;
+        //private void Entra(object sender, EventArgs e)
+        //{
+        //    Label1.Text = Caixa1.Text;
             
-        }
+        //}
 
         private void Entry_Focused(object sender, FocusEventArgs e)
         {
