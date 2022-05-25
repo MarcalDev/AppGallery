@@ -1,4 +1,5 @@
 ﻿using AppGallery.AppBase.Modals;
+using AppGallery.Resources.Effects;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -58,7 +59,9 @@ namespace AppGallery
 
             MainPage = new AppBase.Menu();
 
-        }
+            LogicUpdateStatusBarColorByTheme();
+
+        }        
 
 
         public static List<PaginaColecao> MenuItensColecao{ 
@@ -180,6 +183,41 @@ namespace AppGallery
             }
         }
 
+        
+        protected override void OnStart()
+        {
+        }
+
+        protected override void OnSleep()
+        {
+        }
+
+        protected override void OnResume()
+        {
+        }
+
+        private void LogicUpdateStatusBarColorByTheme()
+        {
+            UpdateStatusBarColorByTheme();
+            Application.Current.RequestedThemeChanged += (obj, args) =>
+            {
+                UpdateStatusBarColorByTheme();
+            };
+        }
+        private void UpdateStatusBarColorByTheme()
+        {
+            if (Application.Current.RequestedTheme == OSAppTheme.Light)
+            {
+                //Light
+                ((MasterDetailPage)MainPage).Detail.Effects.Add(new StatusBarEffect() { BackgroundColor = Color.FromHex("#C4C4C4") });
+            }
+            else
+            {
+                //Dark
+                ((MasterDetailPage)MainPage).Detail.Effects.Add(new StatusBarEffect() { BackgroundColor = Color.FromHex("#000000") });
+            }
+        }
+
         private void AbrirPagina(object sender, EventArgs e)
         {
             //Pegar o parâmetro (Página)
@@ -205,16 +243,7 @@ namespace AppGallery
             ((MasterDetailPage)App.Current.MainPage).Detail = pagina;
             ((MasterDetailPage)App.Current.MainPage).IsPresented = false;
         }
-        protected override void OnStart()
-        {
-        }
 
-        protected override void OnSleep()
-        {
-        }
 
-        protected override void OnResume()
-        {
-        }
     }
 }
