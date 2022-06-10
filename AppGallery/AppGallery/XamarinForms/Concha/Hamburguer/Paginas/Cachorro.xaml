@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage Title="Cachorro" xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage 
+    Shell.NavBarIsVisible="True"
+    Shell.NavBarHasShadow="False"
+    Shell.TabBarIsVisible="True"
+    Title="Cachorro" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGallery.XamarinForms.Concha.Hamburguer.Paginas.Cachorro">
+    <Shell.TitleView>
+        <Label Text="Alteramos a TitleView"/>
+    </Shell.TitleView>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Cachorro"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Label Text="Cachorro!" HorizontalOptions="Center" VerticalOptions="Center"/>
     </ContentPage.Content>
 </ContentPage>

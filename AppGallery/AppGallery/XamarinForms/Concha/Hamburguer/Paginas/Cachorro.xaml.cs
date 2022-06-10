@@ -16,5 +16,7 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer.Paginas
         {
             InitializeComponent();
         }
+
+
     }
 }

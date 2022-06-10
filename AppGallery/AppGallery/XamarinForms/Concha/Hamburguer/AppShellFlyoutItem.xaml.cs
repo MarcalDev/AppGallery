@@ -16,5 +16,10 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer
         {
             InitializeComponent();
         }
+
+        private void AbrirAppGallery(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new AppBase.Menu();
+        }
     }
 }

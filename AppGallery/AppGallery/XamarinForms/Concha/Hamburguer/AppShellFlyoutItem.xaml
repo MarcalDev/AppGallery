@@ -1,11 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell 
     FlyoutHeaderBehavior="Scroll"
+    FlyoutIcon="menu"
+    FlyoutBackgroundImage="background"
+    FlyoutBackgroundImageAspect="Fill"
+    FlyoutBackdrop="#95FF0000"
     xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pagina="clr-namespace:AppGallery.XamarinForms.Concha.Hamburguer.Paginas"
              x:Class="AppGallery.XamarinForms.Concha.Hamburguer.AppShellFlyoutItem">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FlyoutBaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="MediumAquamarine"/>
+                <Setter Property="Shell.ForegroundColor" Value="Aquamarine"/>
+                <Setter Property="Shell.UnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TitleColor" Value="Aquamarine"/>
 
+                <Setter Property="Shell.TabBarBackgroundColor" Value="LightGray"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#707070"/>
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource FlyoutBaseStyle}">
+                
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+    
+    <!--<Shell.FlyoutBackground>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#83a4d4" Offset="0.1"/>
+            <GradientStop Color="#b6fbff" Offset="1"/>
+        </LinearGradientBrush>
+    </Shell.FlyoutBackground>-->
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.8*, 0.2*">
+                <Label Text="{Binding Title}" Margin="10" VerticalTextAlignment="Center"/>
+                <Image Grid.Column="1" Source="{Binding FlyoutIcon}" Margin="10" HeightRequest="30"/>
+            </Grid>
+            
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.8*, 0.2*">
+                <Label Text="{Binding Title}" Margin="10" VerticalTextAlignment="Center"/>
+                <Image Grid.Column="1" Source="{Binding FlyoutIcon}" Margin="10" HeightRequest="30"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    
     <Shell.FlyoutHeader>
         <ContentView>
             <Image Source="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png"/>
@@ -28,4 +74,6 @@
         <ShellContent Title="Tartaruga" Icon="turtle" ContentTemplate="{DataTemplate pagina:Tartaruga}"/>
     </FlyoutItem>
     <ShellContent Title="Tartaruga" Icon="turtle" ContentTemplate="{DataTemplate pagina:Tartaruga}"/>
+
+    <MenuItem Text="Sair" IconImageSource="logout" Clicked="AbrirAppGallery"/>
 </Shell>
