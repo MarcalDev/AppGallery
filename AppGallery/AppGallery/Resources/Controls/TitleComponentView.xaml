@@ -5,7 +5,7 @@
              BindingContext="{x:Reference myComponent}"
              x:Class="AppGallery.Resources.Controls.TitleComponentView">
   <ContentView.Content>
-        <Frame Margin="10" CornerRadius="0" BackgroundColor="{AppThemeBinding Light = {StaticResource SearchButtonColor1}, Dark ={StaticResource SearchButtonColor2}}" BorderColor="{AppThemeBinding Light = {StaticResource SearchButtonBorderColor1}, Dark ={StaticResource SearchButtonBorderColor2}}">
+        <Frame Margin="10" CornerRadius="0" BackgroundColor="{AppThemeBinding Light = {StaticResource LogoBackgroundColor1}, Dark ={StaticResource SearchButtonColor2}}" BorderColor="{AppThemeBinding Light = {StaticResource SearchButtonBorderColor1}, Dark ={StaticResource SearchButtonBorderColor2}}">
             <StackLayout>
                 <Label Text="{Binding Name}" x:Name="LblName" Style="{DynamicResource TitleCredits}" />
 

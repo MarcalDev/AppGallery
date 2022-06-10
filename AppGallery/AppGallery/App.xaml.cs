@@ -170,6 +170,15 @@ namespace AppGallery
                 };
                 classesuteis.Nome = "Classes úteis";
 
+                var xf47 = new PaginaColecao()
+                {
+                   new Pagina() { Nome = "Grid Rapida", Descricao = "Uma nova forma de declarar colunas e linhas", ArquivoPagina = typeof(XamarinForms.XF47.GridRapida), TemNavegacao = true },
+                   new Pagina() { Nome = "Multi-Bindings", Descricao = "Texto com vínculos multiplos ", ArquivoPagina = typeof(XamarinForms.XF47.MultiplosVinculos), TemNavegacao = true },
+                   new Pagina() { Nome = "Formas (Shapes)", Descricao = "Construa formas retangulares, elipse e linhas ", ArquivoPagina = typeof(XamarinForms.XF47.Formas), TemNavegacao = true },
+                   new Pagina() { Nome = "Caminhos (Paths)", Descricao = "Desenhe livremente", ArquivoPagina = typeof(XamarinForms.XF47.Caminho), TemNavegacao = true },
+                };
+                xf47.Nome = "Xamarin Forms 4.7";
+
                 return new List<PaginaColecao>() 
                 {
                     paginas,
@@ -179,7 +188,8 @@ namespace AppGallery
                     estilos,
                     animacoes,
                     gestos,
-                    classesuteis
+                    classesuteis,
+                    xf47
                 };
 
             }

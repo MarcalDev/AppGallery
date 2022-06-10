@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:AppGallery.Resources.Controls"
+             Title="Caminhos (Paths)"
+             x:Class="AppGallery.XamarinForms.XF47.Caminho">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <controls:TitleComponentView 
+                Name="Path"
+                Properties="Data, RenderTransform"/>
+
+
+                <controls:SubtitleComponentView Properties="Path, Data">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Grid>
+                                <Path 
+                                Data="M131.821,283.027c0,100.8,73.664,104.681,73.664,
+                                    104.681l85.3-68.5s27.14-104.681-15.508-72.372-58.156,
+                                    105.973-69.787,51.694-33.6-95.635-46.525-64.618S131.821,
+                                    283.027,131.821,283.027Z" 
+                                Stroke="Black"
+                                StrokeThickness="5"
+                                Fill="Red"/>
+
+                                <!--<Path.RenderTransform>
+                    <TranslateTransform Y="-15"/>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    </Path.RenderTransform>
+                </Path>-->
+
+
+                                <Path 
+                Background="Black"
+                TranslationX="50"
+                Data="M131.821,283.027c0,100.8,73.664,104.681,73.664,104.681l85.3-68.5s27.14-104.681-15.508-72.372-58.156,105.973-69.787,51.694-33.6-95.635-46.525-64.618S131.821,283.027,131.821,283.027Z" 
+                Stroke="Black"
+                StrokeThickness="5"
+                Fill="Blue"
+                />
+                                <Path 
+                Data="M131.821,283.027c0,100.8,73.664,104.681,73.664,104.681l85.3-68.5s27.14-104.681-15.508-72.372-58.156,105.973-69.787,51.694-33.6-95.635-46.525-64.618S131.821,283.027,131.821,283.027Z" 
+                Stroke="Black"
+                StrokeThickness="5"
+                Fill="Green"
+                />
+                                <!--<Path.RenderTransform>
+                    <TranslateTransform Y="-40"/>
+                    <SkewTransform AngleY="20"/>
+                    <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+                    </Path.RenderTransform> -->
+
+
+
+
+                            </Grid>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+
+                <controls:SubtitleComponentView Properties="GeometryGroup, ElipseGeometry, RectangleGeometry">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Path Fill="Blue" Stroke="Black" StrokeThickness="3" HorizontalOptions="Center">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <EllipseGeometry RadiusX="45" RadiusY="25" Center="180, 30" />
+                                        <EllipseGeometry RadiusX="45" RadiusY="25" Center="150, 30" />
+                                        <RectangleGeometry Rect="0,0,100,50"/>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+
+                <controls:SubtitleComponentView Properties="Image.Clip, Geometry, EllipseGeometry">
+                    <controls:SubtitleComponentView.Component>
+                        <StackLayout>
+                            <Image Source="https://tm.ibxk.com.br/2017/06/22/22100428046161.jpg">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="75" RadiusY="75" Center="180, 115"/>
+                                </Image.Clip>
+                            </Image>
+                        </StackLayout>
+                    </controls:SubtitleComponentView.Component>
+                </controls:SubtitleComponentView>
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
