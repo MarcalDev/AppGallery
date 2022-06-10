@@ -57,14 +57,22 @@
             <Image Source="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png"/>
         </ContentView>
     </Shell.FlyoutHeader>
+    <!--
+    Rotas Absolutas:
+    Shell.Current.GoToAsync("//domesticos/populares/gato")
+    
+    Rotas Relativas:
+    Shell.Current.GotoAsync("../gato2")
+    
+    -->
     
     
-    <FlyoutItem Title="Domésticos" Icon="dog" >
-        <Tab Title="Populares" Icon="dog">
-            <ShellContent Title="Cachorro" Icon="dog" ContentTemplate="{DataTemplate pagina:Cachorro}"/>
-            <ShellContent Title="Gato" Icon="happy" ContentTemplate="{DataTemplate pagina:Gato}"/>
+    <FlyoutItem Title="Domésticos" Route="domesticos" Icon="dog" >
+        <Tab Title="Populares" Route="populares" Icon="dog">
+            <ShellContent Title="Cachorro" Route="cachorro" Icon="dog" ContentTemplate="{DataTemplate pagina:Cachorro}"/>
+            <ShellContent Title="Gato" Route="gato" Icon="happy" ContentTemplate="{DataTemplate pagina:Gato}"/>
         </Tab>
-        <ShellContent Title="Peixe" Icon="fish" ContentTemplate="{DataTemplate pagina:Peixe}"/>
+        <ShellContent Title="Peixe" Icon="fish" Route="peixe" ContentTemplate="{DataTemplate pagina:Peixe}"/>
     </FlyoutItem>
 
     <FlyoutItem Title="Todos os animais" FlyoutDisplayOptions="AsMultipleItems">

@@ -11,6 +11,9 @@
     </Shell.TitleView>
 
     <ContentPage.Content>
-        <Label Text="Cachorro!" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <StackLayout>
+            <Label Text="Cachorro!" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button Text="Abrir Página do Gato" Clicked="AbrirGato" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

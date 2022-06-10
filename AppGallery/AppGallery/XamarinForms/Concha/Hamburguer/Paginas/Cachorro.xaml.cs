@@ -17,6 +17,9 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer.Paginas
             InitializeComponent();
         }
 
-
+        private async void AbrirGato(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//domesticos/populares/gato");
+        }
     }
 }

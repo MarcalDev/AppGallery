@@ -4,9 +4,10 @@
              x:Class="AppGallery.XamarinForms.Concha.Abas.Paginas.Gato">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Gato"
+            <Label Text="Gato!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

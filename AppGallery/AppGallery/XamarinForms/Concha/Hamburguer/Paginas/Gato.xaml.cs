@@ -16,5 +16,9 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer.Paginas
         {
             InitializeComponent();
         }
+        private async void AbrirCachorro(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("../cachorro");
+        }
     }
 }
