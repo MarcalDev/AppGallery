@@ -10,6 +10,7 @@ namespace AppGallery.AppBase.Modals
         public string Descricao { get; set; }
         public Type ArquivoPagina { get; set; }
         public bool TemNavegacao { get; set; }
+        public bool SubstituirMainPage { get; set; }
 
     }
 }

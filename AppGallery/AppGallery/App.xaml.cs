@@ -60,8 +60,11 @@ namespace AppGallery
 
             //MainPage = new NavigationPage (new TelaTempo());
             MainPage = new AppBase.Menu();
+            //MainPage = new AppGallery.XamarinForms.Concha.Abas.AppShellTabbar();
 
-            LogicUpdateStatusBarColorByTheme();
+
+
+            //LogicUpdateStatusBarColorByTheme();
 
         }        
 
@@ -179,6 +182,14 @@ namespace AppGallery
                 };
                 xf47.Nome = "Xamarin Forms 4.7";
 
+                var shell = new PaginaColecao()
+                {
+                   new Pagina() { Nome = "Tabbar (Shell)", Descricao = "Uma nova forma de navegação baseada em abas com Shell", ArquivoPagina = typeof(XamarinForms.Concha.Abas.AppShellTabbar), SubstituirMainPage = true, TemNavegacao = true},
+                   new Pagina() { Nome = "Flyout (Shell)", Descricao = "Uma nova forma de navegação baseada em hamburguer com Shell", ArquivoPagina = typeof(XamarinForms.Concha.Hamburguer.AppShellFlyoutItem), SubstituirMainPage = true, TemNavegacao = true},
+                  
+                };
+                shell.Nome = "Shell";
+
                 return new List<PaginaColecao>() 
                 {
                     paginas,
@@ -189,7 +200,8 @@ namespace AppGallery
                     animacoes,
                     gestos,
                     classesuteis,
-                    xf47
+                    xf47,
+                    shell
                 };
 
             }
@@ -216,6 +228,7 @@ namespace AppGallery
                 UpdateStatusBarColorByTheme();
             };
         }
+        
         private void UpdateStatusBarColorByTheme()
         {
             if (Application.Current.RequestedTheme == OSAppTheme.Light)
@@ -238,19 +251,32 @@ namespace AppGallery
             Pagina parametro = (Pagina)eventArgs.Parameter;
 
             Page pagina = null;
-            if (parametro.TemNavegacao)
+
+            if (parametro.SubstituirMainPage)
             {
-                pagina = new NavigationPage(
-                    (Page)Activator.CreateInstance(parametro.ArquivoPagina)
-                );
+                pagina = (Page)Activator.CreateInstance(parametro.ArquivoPagina);
+           
+                App.Current.MainPage = pagina;
+
             }
             else
             {
-                pagina = (Page)Activator.CreateInstance(parametro.ArquivoPagina);
+                if (parametro.TemNavegacao)
+                {
+                    pagina = new NavigationPage(
+                        (Page)Activator.CreateInstance(parametro.ArquivoPagina)
+                    );
+                }
+                else
+                {
+                    pagina = (Page)Activator.CreateInstance(parametro.ArquivoPagina);
+                }
+                ((MasterDetailPage)App.Current.MainPage).Detail = pagina;
+                ((MasterDetailPage)App.Current.MainPage).IsPresented = false;
+
             }
 
-            ((MasterDetailPage)App.Current.MainPage).Detail = pagina;
-            ((MasterDetailPage)App.Current.MainPage).IsPresented = false;
+            
         }
     }
 }
