@@ -18,7 +18,15 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer.Paginas
         }
         private async void AbrirCachorro(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("../cachorro");
+            try
+            {
+
+                await Shell.Current.GoToAsync("..");
+                await Shell.Current.GoToAsync("//cachorro");
+            } catch (Exception ex)
+            {
+                await DisplayAlert("Página não encontrada", "Verifique a rota!", "OK");
+            }
         }
     }
 }

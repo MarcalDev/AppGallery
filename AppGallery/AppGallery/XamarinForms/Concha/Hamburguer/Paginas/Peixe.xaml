@@ -7,6 +7,8 @@
             <Label Text="Peixe"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Abrir Página do Gato" Clicked="AbrirGato2" VerticalOptions="EndAndExpand"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

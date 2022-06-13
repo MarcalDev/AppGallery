@@ -16,5 +16,10 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer.Paginas
         {
             InitializeComponent();
         }
+
+        private async void AbrirGato2(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("///gato2");
+        }
     }
 }

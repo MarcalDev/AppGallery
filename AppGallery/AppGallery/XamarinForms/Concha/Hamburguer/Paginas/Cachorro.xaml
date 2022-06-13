@@ -7,13 +7,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppGallery.XamarinForms.Concha.Hamburguer.Paginas.Cachorro">
     <Shell.TitleView>
-        <Label Text="Alteramos a TitleView"/>
+        <Label Text="Alteramos a TitleView" VerticalTextAlignment="Center" TextColor="#707070"/>
     </Shell.TitleView>
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Cachorro!" HorizontalOptions="Center" VerticalOptions="Center"/>
+           
+            <ListView x:Name="ListViewCachorro" ItemTapped="ListViewCachorro_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Margin="10">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{} {0} - {1} idade">
+                                        <Binding Path="Nome"/>
+                                        <Binding Path="Idade"/>
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                                
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
             <Button Text="Abrir Página do Gato" Clicked="AbrirGato" VerticalOptions="EndAndExpand"/>
+            <Button Text="Abrir Página de detalhe" Clicked="AbriCachorroDetalhe" VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

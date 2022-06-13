@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppGallery.XamarinForms.Concha.Hamburguer.Paginas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace AppGallery.XamarinForms.Concha.Hamburguer
         public AppShellFlyoutItem()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("cachorrodetalhe", typeof(CachorroDetalhe));
         }
 
         private void AbrirAppGallery(object sender, EventArgs e)

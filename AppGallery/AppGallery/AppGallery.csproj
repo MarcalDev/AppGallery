@@ -104,6 +104,9 @@
     <EmbeddedResource Update="XamarinForms\Concha\Hamburguer\Paginas\Cachorro.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="XamarinForms\Concha\Hamburguer\Paginas\CachorroDetalhe.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="XamarinForms\Concha\Hamburguer\Paginas\Gato.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
