@@ -234,12 +234,12 @@ namespace AppGallery
             if (Application.Current.RequestedTheme == OSAppTheme.Light)
             {
                 //Light
-                ((MasterDetailPage)MainPage).Detail.Effects.Add(new StatusBarEffect() { BackgroundColor = Color.FromHex("#C4C4C4") });
+                ((FlyoutPage)MainPage).Detail.Effects.Add(new StatusBarEffect() { BackgroundColor = Color.FromHex("#C4C4C4") });
             }
             else
             {
                 //Dark
-                ((MasterDetailPage)MainPage).Detail.Effects.Add(new StatusBarEffect() { BackgroundColor = Color.FromHex("#000000") });
+                ((FlyoutPage)MainPage).Detail.Effects.Add(new StatusBarEffect() { BackgroundColor = Color.FromHex("#000000") });
             }
         }
 
@@ -271,8 +271,8 @@ namespace AppGallery
                 {
                     pagina = (Page)Activator.CreateInstance(parametro.ArquivoPagina);
                 }
-                ((MasterDetailPage)App.Current.MainPage).Detail = pagina;
-                ((MasterDetailPage)App.Current.MainPage).IsPresented = false;
+                ((FlyoutPage)App.Current.MainPage).Detail = pagina;
+                ((FlyoutPage)App.Current.MainPage).IsPresented = false;
 
             }
 

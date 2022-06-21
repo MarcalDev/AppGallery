@@ -3,19 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Padding="10"
              x:Class="AppGallery.XamarinForms.Controles.CaixaDeRadioControle.CaixaDeRadio">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="RadioButtonTemplate">
+                <Frame CornerRadius="0" BorderColor="Black">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter Property="Background" Value="#FF7A53"/>
+                                        <Setter Property="BorderColor" Value="#FF3A00"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter Property="Background" Value="White"/>
+                                        <Setter Property="BorderColor" Value="Black"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <ContentPresenter/>
+                </Frame>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="IsChecked, Text, TextColor"/>
+        <ScrollView>
+            <StackLayout>
 
-            <RadioButton IsChecked="True" Content="C#" TextColor="Blue" FontFamily="sans-serif-thin"/>
-            <RadioButton IsChecked="false" Content="PHP" TextColor="Red" FontFamily="sans-serif-light"/>
-            <RadioButton IsChecked="False" Content="Java" TextColor="Green"/>
+                <RadioButton IsChecked="True" ControlTemplate="{StaticResource RadioButtonTemplate}">
+                    <RadioButton.Content>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="R$50" FontSize="8" VerticalOptions="Center">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroupList>
+                                        <VisualStateGroup x:Name="CheckedStates">
+                                            <VisualState x:Name="Checked">
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor" Value="Black"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Unchecked">
+                                                <VisualState.Setters>
+                                                    <Setter Property="TextColor" Value="Black"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateGroupList>
+                                </VisualStateManager.VisualStateGroups>
+                            </Label>
+                        </StackLayout>
+                        </RadioButton.Content>
+                </RadioButton>
+                <RadioButton IsChecked="false" Content="R$100" ControlTemplate="{StaticResource RadioButtonTemplate}"/>
+                <RadioButton IsChecked="False" Content="R$150" ControlTemplate="{StaticResource RadioButtonTemplate}"/>
 
-            <Label Text="GroupName"/>
-            <RadioButton Content="JavaScript" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
-            <RadioButton Content="SASS" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
-            <RadioButton Content="HTML" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
-            <Label x:Name="LblInformativo"/>
-        </StackLayout>
+
+                <Label Text="IsChecked, Text, TextColor"/>
+
+                <RadioButton IsChecked="True" Content="C#" TextColor="Blue" FontFamily="sans-serif-thin"/>
+                <RadioButton IsChecked="false" Content="PHP" TextColor="Red" FontFamily="sans-serif-light"/>
+                <RadioButton IsChecked="False" Content="Java" TextColor="Green"/>
+
+                <Label Text="GroupName"/>
+                <RadioButton Content="JavaScript" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Content="SASS" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Content="HTML" GroupName="FrontEnd" CheckedChanged="RadioButton_CheckedChanged"/>
+                <Label x:Name="LblInformativo"/>
+                
+                
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

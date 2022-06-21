@@ -19,7 +19,7 @@ namespace AppGallery.XamarinForms.Paginas.PaginaDeMenuLateral
 
         private void AbrirMenu(object sender, EventArgs e)
         {
-            ((MasterDetailPage)App.Current.MainPage).IsPresented = true;
+            ((FlyoutPage)App.Current.MainPage).IsPresented = true;
         }
     }
 }

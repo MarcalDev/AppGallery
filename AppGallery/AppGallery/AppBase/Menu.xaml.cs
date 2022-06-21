@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace AppGallery.AppBase
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Menu : MasterDetailPage
+    public partial class Menu : FlyoutPage
     {
         public Menu()
         {
@@ -39,8 +39,8 @@ namespace AppGallery.AppBase
 
             var pagina = new NavigationPage((Page)Activator.CreateInstance(tipo));
 
-            ((MasterDetailPage)App.Current.MainPage).Detail = pagina;
-            ((MasterDetailPage)App.Current.MainPage).IsPresented = false;
+            ((FlyoutPage)App.Current.MainPage).Detail = pagina;
+            ((FlyoutPage)App.Current.MainPage).IsPresented = false;
         }
 
 
