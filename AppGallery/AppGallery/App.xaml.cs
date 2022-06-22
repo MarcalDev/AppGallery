@@ -182,6 +182,14 @@ namespace AppGallery
                 };
                 xf47.Nome = "Xamarin Forms 4.7";
 
+                var xf48xf50 = new PaginaColecao()
+                {
+                   new Pagina() { Nome = "Pincéis", Descricao = "Uma nova forma de preencher os controles", ArquivoPagina = typeof(XamarinForms.XF48XF50.Pinceis), TemNavegacao = true },
+                   new Pagina() { Nome = "Arrastar e Soltar (DragAndDrop)", Descricao = "Um novo gesto que permite pegar e soltar controles", ArquivoPagina = typeof(XamarinForms.XF48XF50.ArrastarSoltar), TemNavegacao = true },
+                
+                };
+                xf48xf50.Nome = "Xamarin Forms 4.8 - 5.0";
+
                 var shell = new PaginaColecao()
                 {
                    new Pagina() { Nome = "Tabbar (Shell)", Descricao = "Uma nova forma de navegação baseada em abas com Shell", ArquivoPagina = typeof(XamarinForms.Concha.Abas.AppShellTabbar), SubstituirMainPage = true, TemNavegacao = true},
@@ -201,6 +209,7 @@ namespace AppGallery
                     gestos,
                     classesuteis,
                     xf47,
+                    xf48xf50,
                     shell
                 };
 
